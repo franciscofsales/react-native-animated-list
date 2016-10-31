@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import DynamicListView from './DynamicListView';
 import {Data} from './data';
+import Row from './Row';
 
 export default class App extends Component {
   constructor(props){
@@ -13,11 +14,11 @@ export default class App extends Component {
   }
 
   _renderRow(rowData) {
-    return <Text>{rowData}</Text>;
+    return (<Row item={rowData} />);
   }
 
   _removeItem(item) {
-    Data.slice(Data.indexOf(item));
+    Data.splice(Data.indexOf(item), 1);
   }
 
   render() {
@@ -38,7 +39,9 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 50,
+    backgroundColor: '#eee',
     justifyContent:'center',
     alignItems: 'center'
-  },
+  }
 });
