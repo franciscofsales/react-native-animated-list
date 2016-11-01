@@ -9,7 +9,7 @@ import {
   LayoutAnimation
 } from 'react-native';
 
-const _defaultTransition  = 200;
+
 
 
 export default class DynamicListRow extends Component {
@@ -18,7 +18,7 @@ export default class DynamicListRow extends Component {
     this.state = {
       _rowOpacity : new Animated.Value(0)
     };
-
+    this._transitionTime = this.props.time || 200;
   }
   componentWillMount(){
     this._rowScale = new Animated.Value(1);
@@ -31,7 +31,7 @@ export default class DynamicListRow extends Component {
   componentDidMount() {
     Animated.timing(this.state._rowOpacity, {
       toValue  : 1,
-      duration : _defaultTransition
+      duration : this._transitionTime
     }).start();
   }
 
@@ -49,7 +49,7 @@ export default class DynamicListRow extends Component {
     Animated.sequence([
       Animated.timing(this._rowScale, {
         toValue: 0,
-        duration: _defaultTransition,
+        duration: this._transitionTime,
       })
     ]).start(callback);
   }
