@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text
 } from 'react-native';
-import DynamicListView from './DynamicListView';
+import DynamicListView from './lib/DynamicListView';
 import {Data} from './data';
 import Row from './Row';
 

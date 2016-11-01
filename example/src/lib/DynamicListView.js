@@ -57,6 +57,8 @@ export default class DynamicList extends Component {
       return (
         <DynamicListRow
           time={this.props.time}
+          animation={this.props.animation || 'scale'}
+          animationFunc={this.props.animationFunc}
           remove={rowData == this.state.rowToDelete}
           onRemoving={this._onAfterRemovingElement}>
             {React.cloneElement(this.props.renderRow(rowData), {onRemove: this._deleteItem})}
