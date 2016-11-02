@@ -27,7 +27,6 @@ export default class App extends Component {
       <View style={styles.container}>
         <DynamicListView
           style={{alignSelf:'stretch'}}
-          animation={'slideRight'}
           items={Data}
           renderRow={this._renderRow}
           onRemove={(item) => this._removeItem(item)}

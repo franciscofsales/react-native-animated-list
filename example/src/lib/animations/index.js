@@ -15,8 +15,7 @@ export default animations = (animation, opts) => {
     case 'slideRight':
       return slideRight(opts);
     default:
-      return opacity;
-
+      return scale(opts);
   }
 }
 
