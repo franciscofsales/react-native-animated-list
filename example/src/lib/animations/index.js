@@ -4,7 +4,7 @@ import opacity from './opacity';
 import slideLeft from './slideLeft';
 import slideRight from './slideRight';
 
-export default animations = (animation, opts) => {
+const animations = (animation, opts) => {
   switch (animation) {
     case 'scale':
       return scale(opts);
@@ -17,23 +17,26 @@ export default animations = (animation, opts) => {
     default:
       return scale(opts);
   }
-}
-
-export const Enter = (controlVar, duration) => {
-  return Animated.timing(controlVar, {
-    toValue  : 1,
-    duration : duration
-  });
 };
 
-export const Leave = (controlVar, duration) => {
+export default animations;
+
+export const enter = (controlVar, duration) => (
+  Animated.timing(controlVar, {
+    toValue: 1,
+    duration,
+  })
+);
+
+
+export const leave = (controlVar, duration) => {
   controlVar.setValue(1);
   return Animated.timing(controlVar, {
     toValue: 0,
-    duration: duration,
+    duration,
   });
-}
+};
 
-export const Reset = (controlVar) => {
+export const reset = (controlVar) => {
   controlVar.setValue(1);
-}
+};

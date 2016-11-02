@@ -1,7 +1,7 @@
-const getAnimation = ({controlVar}) => {
-  return {
-    opacity: controlVar
-  };
-}
+const getAnimation = ({ controlVar }) => (
+  {
+    opacity: controlVar,
+  }
+);
 
 export default getAnimation;

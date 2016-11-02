@@ -1,28 +1,18 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
   TouchableOpacity,
   Text,
   StyleSheet,
 } from 'react-native';
 
-export default class Row extends Component {
-  render() {
-    return (
-      <TouchableOpacity style={styles.rowStyle} onPress={() => this.props.onRemove(this.props.item)}>
-        <Text>{this.props.item}</Text>
-      </TouchableOpacity>
-    );
-  }
-}
-
 const styles = StyleSheet.create({
   rowStyle: {
     backgroundColor: 'white',
     padding: 15,
     borderRadius: 3,
-    marginTop:3,
+    marginTop: 3,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -31,5 +21,19 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-  }
+  },
 });
+
+
+const Row = (props) => (
+  <TouchableOpacity style={styles.rowStyle} onPress={() => props.onRemove(props.item)}>
+    <Text>{props.item}</Text>
+  </TouchableOpacity>
+);
+
+Row.propTypes = {
+  onRemove: React.PropTypes.func,
+  item: React.PropTypes.string,
+};
+
+export default Row;
