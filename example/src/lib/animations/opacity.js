@@ -1,4 +1,4 @@
-const getAnimation = (controlVar) => {
+const getAnimation = ({controlVar}) => {
   return {
     opacity: controlVar
   };

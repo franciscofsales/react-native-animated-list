@@ -1,6 +1,7 @@
 import { Animated } from 'react-native';
 import scale from './scale';
 import opacity from './opacity';
+import slideLeft from './slideLeft';
 
 export default animations = (animation, opts) => {
   switch (animation) {
@@ -8,6 +9,8 @@ export default animations = (animation, opts) => {
       return scale(opts);
     case 'opacity':
       return opacity(opts);
+    case 'slideLeft':
+      return slideLeft(opts);
     default:
       return opacity;
 

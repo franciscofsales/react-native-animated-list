@@ -16,12 +16,16 @@ export default class DynamicListRow extends Component {
   constructor(props){
     super(props);
     this.state = {
-      _controlVar : new Animated.Value(0)
+      x: null,
+      y: null,
+      width: null,
+      height: null
     };
     this._transitionTime = this.props.time || 200;
+    this._measureView = this._measureView.bind(this);
   }
   componentWillMount(){
-    this._controlVar = new Animated.Value(1);
+    this._controlVar = new Animated.Value(0);
   }
 
   componentWillUpdate(){
@@ -29,7 +33,7 @@ export default class DynamicListRow extends Component {
   }
 
   componentDidMount() {
-    Enter(this.state._controlVar, this._transitionTime).start();
+    Enter(this._controlVar, this._transitionTime).start();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -42,24 +46,38 @@ export default class DynamicListRow extends Component {
   }
 
   onRemoving(callback) {
-    Leave(this.state._controlVar, this._transitionTime).start(callback);
+    Leave(this._controlVar, this._transitionTime).start(callback);
+  }
+
+  _measureView(event) {
+    this.setState({
+            x: event.nativeEvent.layout.x,
+            y: event.nativeEvent.layout.y,
+            width: event.nativeEvent.layout.width,
+            height: event.nativeEvent.layout.height
+        });
   }
 
   _reset() {
-    Reset(this.state._controlVar);
+    Reset(this._controlVar);
   }
 
   render() {
-    let rowAnimation = Animation(this.props.animation, this.state._controlVar);
+
+    const {width, height, x, y} = this.state;
+
+    const animationFuncParams = {controlVar: this._controlVar, width, height, x, y};
+    let rowAnimation = Animation(this.props.animation, animationFuncParams);
     if(this.props.animationFunc) {
-      rowAnimation = this.props.animationFunc(this.state._controlVar);
+      rowAnimation = this.props.animationFunc(animationFuncParams);
     }
 
 
       return (
           <Animated.View
+              onLayout={(event) => this._measureView(event)}
               style={rowAnimation}>
-              {this.props.children}
+                {this.props.children}
           </Animated.View>
       );
   }
