@@ -3,7 +3,7 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import DynamicListView from './lib/DynamicListView';
+import AnimatedList from './lib';
 import Data from './data';
 import Row from './Row';
 
@@ -31,7 +31,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <DynamicListView
+        <AnimatedList
           style={{ alignSelf: 'stretch' }}
           items={Data}
           renderRow={this._renderRow}
