@@ -1,10 +1,6 @@
 # React Native Animated List
 
-High order component to animate react native ListView. Includes animation presets and is highly customizable.
-
-
-#### Questions?
-Feel free to reach out to me on Twitter [@franciscofsales](https://twitter.com/franciscofsales).
+High order component to animate and provide animation interfacing for react native ListView. Includes animation presets and is highly customizable.
 
 ### Example
 Demos are under the example folder
@@ -70,6 +66,5 @@ import AnimatedList from 'react-native-animated-list';
 All contributions are very appreciated.
 
 
-<a name="license"/>
-#### License
+### License
 [MIT](https://raw.githubusercontent.com/franciscofsales/react-native-animated-list/master/LICENSE)
