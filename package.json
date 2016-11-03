@@ -2,16 +2,27 @@
   "name": "react-native-animated-list",
   "version": "1.0.0",
   "description": "Animated List View for React Native",
-  "main": "src/index.js",
-  "directories": {
-    "example": "examples"
-  },
+  "main": "src/index",
+  "jsnext:main": "src/index",
+  "files": [
+    "*.md",
+    "src"
+  ],
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/franciscofsales/react-native-animated-list.git"
+  },
+  "tags": [
+    "react",
+    "react-native",
+    "ListView",
+    "AnimatedListView"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
   },
   "keywords": [
     "react",
