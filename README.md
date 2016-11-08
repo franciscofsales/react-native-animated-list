@@ -7,6 +7,8 @@ High order component to animate and provide animation interfacing for react nati
 
 ### Example
 
+Demo is under examples folder
+
 To build and run a example app:
 
 ```bash
