@@ -66,8 +66,8 @@ render() {
 |---|---|---|
 |**`animation`**|`string<opacity|scale|slideLeft|slideRight>`|Animation preset.|
 |**`duration`**|`number`|Length of animation in milliseconds. _Default 300._|
-|**`animationFunc`**|`() => Aniamted animation object`|Callback that defines a custom animation.|
-|**`renderRow`**|`() => ReactElement<any>`|Function t renders a row.|
+|**`animationFunc`**|`() => Animated animation object`|Function to define a custom animation.|
+|**`renderRow`**|`() => ReactElement<any>`|Function to render a row.|
 |**`onRemove`**|`() => ReactElement<any>`|Function to delete a row.|
 
 
