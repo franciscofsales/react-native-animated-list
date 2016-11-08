@@ -3,7 +3,7 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import AnimatedList from './lib';
+import AnimatedList from 'react-native-animated-list';
 import Data from './data';
 import Row from './Row';
 
@@ -33,6 +33,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <AnimatedList
           style={{ alignSelf: 'stretch' }}
+          animation="opacity"
           items={Data}
           renderRow={this._renderRow}
           onRemove={(item) => this._removeItem(item)}

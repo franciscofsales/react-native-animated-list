@@ -1,5 +1,7 @@
-node_modules
+node_modules/
 .babelrc
 .eslintrc
 __tests__
 circle.yml
+examples/
+react-native-animated-list.gif
