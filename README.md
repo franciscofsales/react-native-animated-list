@@ -2,8 +2,10 @@
 
 High order component to animate and provide animation interfacing for react native ListView. Includes animation presets and is highly customizable.
 
+
+<img align="left" width="360px" src="https://github.com/franciscofsales/react-native-animated-list/raw/master/react-native-animated-list.gif">
+
 ### Example
-Demos are under the example folder
 
 To build and run a example app:
 
@@ -35,11 +37,6 @@ react-native run-android
 $ npm install --save react-native-animated-list
 ```
 
-#### Using yarn:
-
-```sh
-$ yarn add react-native-animated-list
-```
 
 ### Usage
 
@@ -48,7 +45,17 @@ import React, { Component } from 'react';
 
 import AnimatedList from 'react-native-animated-list';
 
-
+render() {
+  return (
+    <AnimatedList
+        animation="scale"
+        items={Data}
+        duration={300}
+        renderRow={this._renderRow}  
+        onRemove={(item) => this._removeItem(item)}
+    />
+  );
+}
 ```
 
 #### Props
@@ -58,12 +65,13 @@ import AnimatedList from 'react-native-animated-list';
 |**`animation`**|`string<opacity|scale|slideLeft|slideRight>`|Animation preset.|
 |**`duration`**|`number`|Length of animation in milliseconds. _Default 300._|
 |**`animationFunc`**|`() => Aniamted animation object`|Callback that defines a custom animation.|
-|**`renderRow`**|`() => ReactElement<any>`|Callback that renders a row.|
+|**`renderRow`**|`() => ReactElement<any>`|Function t renders a row.|
+|**`onRemove`**|`() => ReactElement<any>`|Function to delete a row.|
 
 
 
 ### Contributing
-All contributions are very appreciated.
+All contributions are very appreciated <3.
 
 
 ### License
