@@ -64,7 +64,7 @@ render() {
 
 | Prop | Type | Description |
 |---|---|---|
-|**`animation`**|`string<opacity|scale|slideLeft|slideRight>`|Animation preset.|
+|**`animation`**|`string<opacity\|scale\|slideLeft\|slideRight>`|Animation preset.|
 |**`duration`**|`number`|Length of animation in milliseconds. _Default 300._|
 |**`animationFunc`**|`() => Animated animation object`|Function to define a custom animation.|
 |**`renderRow`**|`() => ReactElement<any>`|Function to render a row.|
